@@ -1,0 +1,6 @@
+name: mUHC
+version: 1.0
+author: DivinanceMC
+main: DivinanceMC.mUHC.mUHC
+commands:
+   kick:
