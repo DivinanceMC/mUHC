@@ -15,11 +15,14 @@ public class Leave implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
+		String player1 = event.getPlayer().getName();
+		int players = Bukkit.getOnlinePlayers().length;
+		int players1 = Bukkit.getOnlinePlayers().length - 1;
 		for (TeamHandler t : mUHC.getTeams()) {
 			if (t.getMembers().contains(player.getName())) {
 				t.getMembers().add(player.getName());
+			Bukkit.broadcastMessage(mUHC.getStars(player) + t.getColor() + player1 + ChatColor.GRAY + " left the server." + ChatColor.DARK_GRAY + "[" + ChatColor.GOLD + players1 + ChatColor.DARK_GRAY + "/" + ChatColor.GOLD + mUHC.MAX_PLAYERS + ChatColor.DARK_GRAY + "]");
 			event.setQuitMessage(null);
-			Bukkit.broadcastMessage(mUHC.getStars(player) + t.getColor() + player.getName() + ChatColor.GRAY + " left the server.");
 			}
 			
 		}
